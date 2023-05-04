@@ -1,0 +1,13 @@
+<header>
+  <div class="buttons">
+    <% if user_signed_in? %>
+      <%= link_to 'New Movie', new_movie_path %>
+      <%= link_to 'Edit Profile', edit_user_path(current_user) %>
+      <%= button_to 'Exit', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Home', root_path, class: "home" %>
+      <%= link_to 'Log in', new_user_session_path, class: "link login" %>
+      <%= link_to 'Sign up', new_user_registration_path, class: "link" %>
+    <% end %>
+  </div>
+</header>

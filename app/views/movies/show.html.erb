@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @movie %>
+
+<div>
+  <%= link_to "Back to movies", movies_path %>
+
+  <% if current_user == @movie.user %>
+    <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
+    <%= button_to "Destroy this movie", @movie, method: :delete %>
+  <% end %>
+
+  <%= link_to 'Add comment', new_movie_comment_path(@movie) if user_signed_in? %>
+  <% @comments.each do |comment| %>
+    <br>
+    <%= comment.user.email %>
+    <br>
+    <%= comment.body %>
+    <br>
+    <%= link_to 'Edit comment', edit_movie_comment_path(@movie, comment) if current_user == comment.user %>
+  <% end %>
+</div>

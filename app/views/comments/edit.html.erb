@@ -1,0 +1,6 @@
+<%= form_with model: @comment, url: movie_comment_path do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%= f.submit %>
+<% end %>

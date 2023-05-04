@@ -1,0 +1,57 @@
+<%= form_with(model: movie) do |f| %>
+  <!-- <% if movie.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+        <% movie.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %> -->
+
+  <div>
+    <%= f.label :title, style: "display: block" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :description, style: "display: block" %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :runtime, style: "display: block" %>
+    <%= f.number_field :runtime %>
+  </div>
+
+  <div>
+    <%= f.label :released, style: "display: block" %>
+    <%= f.date_field :released %>
+  </div>
+
+  <div>
+    <%= f.label :genre, style: "display: block" %>
+    <%= f.text_field :genre %>
+  </div>
+
+  <div>
+    <%= f.label :actors, style: "display: block" %>
+    <%= f.text_field :actors %>
+  </div>
+
+  <div>
+    <%= f.label :director, style: "display: block" %>
+    <%= f.text_field :director %>
+  </div>
+
+  <div>
+    <%= f.label :imdb_rating, style: "display: block" %>
+    <%= f.text_field :imdb_rating %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
